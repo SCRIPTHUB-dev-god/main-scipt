@@ -236,7 +236,7 @@ AimbotMainTab:AddToggle("SuperRadarAim", { Text = "360° Aimbot", Default = true
 AimbotMainTab:AddToggle("AimPrediction", { Text = "Aim Prediction", Default = false })
 
 AimbotSettingsTab:AddSlider("AimbotSmoothness", { Text = "Aimbot Smoothness", Default = 0, Min = 0, Max = 20, Rounding = 0, Suffix = "" })
-AimbotSettingsTab:AddSlider("PredictionVelocity", { Text = "Prediction Scale", Default = 0.2, Min = 0, Max = 15, Rounding = 4, Suffix = "" })
+AimbotSettingsTab:AddSlider("PredictionVelocity", { Text = "Prediction Scale", Default = 0.2, Min = 0, Max = 15, Rounding = 2, Suffix = "" })
 AimbotSettingsTab:AddDivider() 
 AimbotSettingsTab:AddToggle("DisableCrosshair", { Text = "Disable Crosshair", Default = false })
 AimbotSettingsTab:AddToggle("ShowTargetUI", { Text = "Show Target Info UI", Default = true })
