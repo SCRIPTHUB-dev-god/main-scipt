@@ -1225,8 +1225,8 @@ Group:Button({Title="refresh admin panel",Color=Color3.fromHex("#ff3030"),Justif
 Group:Divider()
 Group:Button({Title="Delete ui",Color=Color3.fromHex("#ff3030"),Justify="Right",Callback=function() Window:Destroy() end})
 local Section1 = Tab4:Section({
-    Title = "General Settings",
-    Icon = "settings",
+    Title = "update",
+    Icon = "clipboard",
     Box = true,
     BoxBorder = true,
     Opened = true,
