@@ -234,6 +234,50 @@ local window = library:window({
     autoshow = true
 })
 
+local ExecutorName = "Unknown"
+
+if identifyexecutor then
+    ExecutorName = identifyexecutor()
+elseif getexecutorname then
+    ExecutorName = getexecutorname()
+end
+
+window:AddTag({
+    title = ExecutorName,
+    icon = "folder",
+    color = Color3.fromRGB(45, 125, 255),
+    getclick = false,
+})
+
+window:AddTag({
+    title = "Join Discord",
+    icon = "globe",
+    color = Color3.fromRGB(45, 125, 255),
+    getclick = true,
+    callback = function()
+        local invite = "https://discord.gg/dbE59H6grJ"
+
+        if setclipboard then
+            setclipboard(invite)
+        elseif toclipboard then
+            toclipboard(invite)
+        else
+            library:Notification({
+                title = "Clipboard",
+                desc = "Clipboard is not supported by your executor.",
+                duration = 5
+            })
+            return
+        end
+
+        library:Notification({
+            title = "Clipboard",
+            desc = "Discord invite copied to clipboard!",
+            duration = 5
+        })
+    end
+})
+
 local Tab1 = window:AddTab("Main", "home")
 local Tab2 = window:AddTab("Settings", "settings")
 
