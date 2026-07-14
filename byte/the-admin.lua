@@ -712,7 +712,7 @@ local Section2 = TabPlayer:Section({
 local Input = Section2:Input({
     Title = "id music",
     Desc = "Enter your id music roblox assets",
-    Value = "",
+    Value = "142376088",
     Callback = function(text)
         local idOnly = string.match(text, "%d+")
         if idOnly then
