@@ -9,10 +9,11 @@ ScreenGui.Name = "TouchFlingRemakeGui"
 local Frame = Instance.new("Frame")
 local Frame_2 = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
+local TextDesc = Instance.new("TextLabel")
 local TextButton = Instance.new("TextButton")
 local TextButton2 = Instance.new("TextButton")
 local ImageButton = Instance.new("ImageButton")
-local Frame3 = Instance.new("Frame")
+local Frame3 = Instance.new("CanvasGroup")
 local Frame_4 = Instance.new("Frame")
 local TextLabel3 = Instance.new("TextLabel")
 local LogsLabel = Instance.new("TextLabel")
@@ -23,6 +24,9 @@ local CornerHeader = Instance.new("UICorner")
 local CornerLogs = Instance.new("UICorner")
 local CornerLogsHeader = Instance.new("UICorner")
 local CornerHide = Instance.new("UICorner")
+
+local StrokeFrame = Instance.new("UIStroke")
+local StrokeFrame3 = Instance.new("UIStroke")
 
 ScreenGui.Parent = PlayerGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -39,11 +43,15 @@ Frame.Size = UDim2.new(0, 158, 0, 160)
 CornerFrame.CornerRadius = UDim.new(0, 8)
 CornerFrame.Parent = Frame
 
+StrokeFrame.Color = Color3.fromRGB(50, 50, 50)
+StrokeFrame.Thickness = 1.5
+StrokeFrame.Parent = Frame
+
 Frame_2.Parent = Frame
 Frame_2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame_2.BorderSizePixel = 0
-Frame_2.Size = UDim2.new(0, 158, 0, 25)
+Frame_2.Size = UDim2.new(0, 158, 0, 30)
 
 CornerHeader.CornerRadius = UDim.new(0, 8)
 CornerHeader.Parent = Frame_2
@@ -53,8 +61,8 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
 TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 5, 0, 0)
-TextLabel.Size = UDim2.new(0, 120, 0, 25)
+TextLabel.Position = UDim2.new(0, 5, 0, 1)
+TextLabel.Size = UDim2.new(0, 120, 0, 15)
 TextLabel.Font = Enum.Font.Sarpanch
 TextLabel.Text = "the Touch Fling"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -62,11 +70,26 @@ TextLabel.TextSize = 25.000
 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
 TextLabel.TextScaled = true
 
+TextDesc.Parent = Frame_2
+TextDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextDesc.BackgroundTransparency = 1.000
+TextDesc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextDesc.BorderSizePixel = 0
+TextDesc.Position = UDim2.new(0, 5, 0, 16)
+TextDesc.Size = UDim2.new(0, 120, 0, 11)
+TextDesc.Font = Enum.Font.SourceSans
+TextDesc.Text = "by XVC_L0RDGM4"
+TextDesc.TextColor3 = Color3.fromRGB(200, 200, 200)
+TextDesc.TextSize = 12.000
+TextDesc.TextXAlignment = Enum.TextXAlignment.Left
+TextDesc.TextScaled = true
+TextDesc.TextWrapped = true
+
 ImageButton.Parent = Frame_2
 ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton.BackgroundTransparency = 1.000
 ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(1, -23, 0, 1)
+ImageButton.Position = UDim2.new(1, -23, 0, 4)
 ImageButton.Size = UDim2.new(0, 22, 0, 22)
 ImageButton.Image = "rbxassetid://10709791437"
 
@@ -74,7 +97,7 @@ TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.113924049, 0, 0.22, 0)
+TextButton.Position = UDim2.new(0.113924049, 0, 0.25, 0)
 TextButton.Size = UDim2.new(0, 121, 0, 35)
 TextButton.Font = Enum.Font.SourceSansItalic
 TextButton.Text = "fling OFF"
@@ -85,7 +108,7 @@ TextButton2.Parent = Frame
 TextButton2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton2.BorderColor3 = Color3.fromRGB(255, 255, 255)
 TextButton2.BorderSizePixel = 0
-TextButton2.Position = UDim2.new(0.113924049, 0, 0.55, 0)
+TextButton2.Position = UDim2.new(0.113924049, 0, 0.58, 0)
 TextButton2.Size = UDim2.new(0, 121, 0, 35)
 TextButton2.Font = Enum.Font.SourceSansItalic
 TextButton2.Text = "TP OFF"
@@ -99,9 +122,14 @@ Frame3.BorderSizePixel = 0
 Frame3.Position = UDim2.new(1, 5, 0, 0)
 Frame3.Size = UDim2.new(0, 158, 0, 160)
 Frame3.Visible = false
+Frame3.GroupTransparency = 1
 
 CornerLogs.CornerRadius = UDim.new(0, 8)
 CornerLogs.Parent = Frame3
+
+StrokeFrame3.Color = Color3.fromRGB(50, 50, 50)
+StrokeFrame3.Thickness = 1.5
+StrokeFrame3.Parent = Frame3
 
 Frame_4.Parent = Frame3
 Frame_4.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -132,7 +160,7 @@ LogsLabel.BorderSizePixel = 0
 LogsLabel.Position = UDim2.new(0, 8, 0, 33)
 LogsLabel.Size = UDim2.new(0, 142, 0, 117)
 LogsLabel.Font = Enum.Font.SourceSans
-LogsLabel.Text = "- new link\n- new name"
+LogsLabel.Text = "- add desc\n- add animation Change logs\n- add stroke gui"
 LogsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 LogsLabel.TextSize = 14.000
 LogsLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -344,16 +372,25 @@ coroutine.wrap(TP_fake_script)()
 
 local function CHANGELOG_fake_script()
 	local script = Instance.new('LocalScript', ImageButton)
+	local TweenService = game:GetService("TweenService")
 	local btn = script.Parent
 	local open = false
 	
 	btn.MouseButton1Click:Connect(function()
 		open = not open
-		Frame3.Visible = open
 		if open then
 			btn.Image = "rbxassetid://10709791281"
+			Frame3.Visible = true
+			TweenService:Create(Frame3, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {GroupTransparency = 0}):Play()
 		else
 			btn.Image = "rbxassetid://10709791437"
+			local tween = TweenService:Create(Frame3, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {GroupTransparency = 1})
+			tween:Play()
+			tween.Completed:Connect(function()
+				if not open then
+					Frame3.Visible = false
+				end
+			end)
 		end
 	end)
 end
