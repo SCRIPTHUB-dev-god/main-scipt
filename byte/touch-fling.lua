@@ -160,7 +160,7 @@ LogsLabel.BorderSizePixel = 0
 LogsLabel.Position = UDim2.new(0, 8, 0, 33)
 LogsLabel.Size = UDim2.new(0, 142, 0, 117)
 LogsLabel.Font = Enum.Font.SourceSans
-LogsLabel.Text = "- add desc\n- add animation Change logs\n- add stroke gui"
+LogsLabel.Text = "- add desc\n- add animation Change logs\n- add stroke gui\n- add anti fling"
 LogsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 LogsLabel.TextSize = 14.000
 LogsLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -417,3 +417,5 @@ local function QCJQJL_fake_script()
 	script.Parent.Draggable = true
 end
 coroutine.wrap(QCJQJL_fake_script)()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTHUB-dev-god/main-scipt/refs/heads/main/byte/anti-fling.lua"))()
